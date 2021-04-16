@@ -18,5 +18,27 @@ class PalindromeValidatorTest {
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void Given_TwoDifferentLettersString_When_ValidatingPalindrome_Then_False() {
+		//Given
+		String string = "ab";
+		//When
+		boolean actualResult = validator.validate(string);
+		//Then
+		boolean expectedResult = false;
+		assertEquals(expectedResult, actualResult);
+	}
+	
+	@Test
+	void Given_TwoEqualLettersString_When_ValidatingPalindrome_Then_True() {
+		//Given
+		String string = "aa";
+		//When
+		boolean actualResult = validator.validate(string);
+		//Then
+		boolean expectedResult = true;
+		assertEquals(expectedResult, actualResult);
+	}
 
 }
